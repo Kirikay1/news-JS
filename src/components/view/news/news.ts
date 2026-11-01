@@ -8,13 +8,11 @@ class News {
         const fragment: DocumentFragment = document.createDocumentFragment();
         const newsItemTemp: HTMLTemplateElement = queryElement<HTMLTemplateElement>('#newsItemTemp');
 
-        news.forEach((item: Article, index: number): void => {
+        news.forEach((item: Article): void => {
             const newsClone: DocumentFragment = newsItemTemp.content.cloneNode(true) as DocumentFragment;
-            if (index % 2) {
-                queryElement<HTMLElement>('.news__item', newsClone).classList.add('alt');
-            }
-            queryElement<HTMLElement>('.news__meta-photo', newsClone).style.backgroundImage =
-                `url(${item.urlToImage || 'img/news_placeholder.jpg'})`;
+            queryElement<HTMLElement>('.news__meta-photo', newsClone).style.backgroundImage = item.urlToImage
+                ? `url("${item.urlToImage}")`
+                : 'none';
             queryElement<HTMLElement>('.news__meta-author', newsClone).textContent = item.author || item.source.name;
             queryElement<HTMLElement>('.news__meta-date', newsClone).textContent = item.publishedAt
                 .slice(0, 10)

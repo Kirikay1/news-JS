@@ -1,35 +1,122 @@
+:root {
+    font-family: Arial, sans-serif;
+    color: #252d28;
+    background: #f5f4ee;
+}
+* {
+    box-sizing: border-box;
+}
 body {
-    color: #fff;
-    background: #17181c;
-    font-family: sans-serif;
+    min-width: 320px;
+    margin: 0;
 }
-
-header {
-    padding: 10px 30px;
+a {
+    color: inherit;
 }
-
-header h1 {
-    font-size: 40px;
-    font-weight: 800;
+button {
+    font: inherit;
 }
-
-footer {
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.page-width {
+    width: min(1240px, calc(100% - 64px));
+    margin-inline: auto;
 }
-footer .copyright {
+.page-header {
+    padding-block: 42px 34px;
+    border-bottom: 1px solid #263d31;
+}
+.header-caption {
+    margin: 0 0 15px;
+    color: #215644;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.6px;
+}
+.page-header h1 {
+    margin: 0;
+    font-family: Georgia, serif;
+    font-size: clamp(48px, 6vw, 80px);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -3px;
+}
+.page-header h1 span {
+    color: #215644;
+}
+.header-description {
+    margin: 18px 0 0;
+    color: #636e62;
     font-size: 14px;
-    color: #333;
+    line-height: 1.6;
+}
+.sources-section {
+    padding-top: 26px;
+    border-bottom: 1px solid #d6d9ce;
+}
+.section-heading {
+    margin: 0;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+}
+.news__prompt {
+    grid-column: 1 / -1;
+    margin: 0;
+    padding: 90px 24px;
+    border: 1px solid #d6d9ce;
+    background: #fdfcf7;
+    color: #636e62;
+    font-family: Georgia, serif;
+    font-size: 26px;
+    line-height: 1.5;
     text-align: center;
 }
-footer .copyright a {
-    color: #444;
+.page-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding-block: 24px 32px;
+    border-top: 1px solid #263d31;
+    color: #636e62;
+    font-size: 12px;
 }
-footer .copyright a:hover {
-    color: #555;
+.page-footer p {
+    margin: 0;
+    line-height: 1.8;
 }
-footer .copyright:before {
-    content: '©';
+.page-footer a {
+    text-decoration: none;
+}
+.page-footer a:hover {
+    text-decoration: underline;
+}
+.school-logo {
+    display: block;
+    width: 36px;
+    height: 36px;
+}
+@media (max-width: 640px) {
+    .page-width {
+        width: calc(100% - 32px);
+    }
+    .page-header {
+        padding-block: 30px 26px;
+    }
+    .page-header h1 {
+        font-size: 54px;
+        letter-spacing: -2px;
+    }
+    .header-description {
+        font-size: 13px;
+    }
+    .news__prompt {
+        padding: 65px 20px;
+        font-size: 23px;
+    }
+    .page-footer {
+        gap: 15px;
+        font-size: 11px;
+    }
 }
