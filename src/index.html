@@ -1,33 +1,39 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>NewsPortal</title>
+        <title>News Portal</title>
     </head>
     <body>
-        <header>
-            <h1>News Portal</h1>
+        <header class="page-header page-width">
+            <p class="header-caption">A WORLD OF PERSPECTIVES</p>
+            <h1>News Portal<span>.</span></h1>
+            <p class="header-description">Stories from around the world. Find your perspective.</p>
         </header>
-        <main>
-            <div class="sources buttons"></div>
-            <div class="news"></div>
-        </main>
-        <footer>
-            <p class="copyright">
-                Copyright <a href="https://newsapi.org">NewsAPI</a>
-            </p>
-        </footer>
-
-        <template id="sourceItemTemp">
-            <div class="source__item">
-                <span class="source__item-name"></span>
+        <main class="page-width">
+            <section class="sources-section" aria-labelledby="sources-heading">
+                <h2 class="section-heading" id="sources-heading">Choose a publication</h2>
+                <div class="sources buttons"></div>
+            </section>
+            <div class="news">
+                <p class="news__prompt">Choose a source above to read its latest stories.</p>
             </div>
+        </main>
+        <footer class="page-footer page-width">
+            <p class="copyright">© 2026 <a href="https://github.com/Kirikay1">Kirikay1</a></p>
+            <p class="news-credit">News provided by <a href="https://newsapi.org/">NewsAPI</a></p>
+            <a href="https://rs.school/courses/javascript" aria-label="RS School JavaScript course">
+                <img class="school-logo" id="school-logo" alt="RS School" width="36" height="36" />
+            </a>
+        </footer>
+        <template id="sourceItemTemp">
+            <button class="source__item" type="button">
+                <span class="source__item-name"></span>
+            </button>
         </template>
-
         <template id="newsItemTemp">
-            <div class="news__item">
+            <article class="news__item">
                 <div class="news__meta">
                     <div class="news__meta-photo"></div>
                     <ul class="news__meta-details">
@@ -40,10 +46,10 @@
                     <h3 class="news__description-source"></h3>
                     <p class="news__description-content"></p>
                     <p class="news__read-more">
-                        <a href="#">Read More</a>
+                        <a href="#">Read More <span aria-hidden="true">↗</span></a>
                     </p>
                 </div>
-            </div>
+            </article>
         </template>
     </body>
 </html>
